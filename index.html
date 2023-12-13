@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add/Remove Input Fields</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css"/>
+</head>
+<body>
+  <div class="container pt-5">
+     <div id="input-container">
+        <div class="row p-2 pl-3">
+            <div>
+                <label for="Name"><b>Name:</b></label>
+                <input 
+                  type="text" placeholder="Enter your name"/>
+            </div>
+            <div>
+            <label for="Degree" class="pl-3"><b>Degree:</b></label>
+            <input 
+              type="text" placeholder="Enter your degree" />
+        </div>
+        <div>
+            <label for="CGPA" class="pl-3"><b>CGPA:</b></label>
+            <input 
+              type="text" placeholder="Enter your Cgpa" />
+     </div>
+   </div>
+   </div>
+   <button  onclick="addInput()" class="btn btn-border-primary">
+    Add New
+     </button>
+    </div
+    iv>
+    <script>
+    function addInput() {
+      const inputContainer = document.getElementById("input-container");
+      const newInputDiv = document.createElement("div");
+      newInputDiv.innerHTML = `
+          <label for="Name"><b> Name:</b></label>
+          <input type="text" placeholder="Enter your name" />
+          <label for="degree" class="pl-3"><b> Degree:</b></label>
+          <input type="text" placeholder="Enter your degree" />
+          <label for="cgpa" class="pl-3"><b> CGPA:</b></label>
+          <input type="text" placeholder="Enter your cgp" />
+          <button onclick="removeInput(this)" class=" mb-1">Remove</button>
+      `;
+      inputContainer.appendChild(newInputDiv);
+    }
+    function removeInput(button) {
+      const inputContainer = document.getElementById("input-container");
+      const divToRemove = button.parentElement;
+      inputContainer.removeChild(divToRemove);
+    }
+      
+
+  </script>
+</body>
+</html>
